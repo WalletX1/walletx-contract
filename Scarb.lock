@@ -2,13 +2,6 @@
 version = 1
 
 [[package]]
-name = "contract"
-version = "0.1.0"
-dependencies = [
- "snforge_std",
-]
-
-[[package]]
 name = "snforge_scarb_plugin"
 version = "0.43.1"
 source = "registry+https://scarbs.xyz/"
@@ -21,4 +14,11 @@ source = "registry+https://scarbs.xyz/"
 checksum = "sha256:17bc65b0abfb9b174784835df173f9c81c9ad39523dba760f30589ef53cf8bb5"
 dependencies = [
  "snforge_scarb_plugin",
+]
+
+[[package]]
+name = "walletx"
+version = "0.1.0"
+dependencies = [
+ "snforge_std",
 ]
