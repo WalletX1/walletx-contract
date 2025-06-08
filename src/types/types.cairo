@@ -16,3 +16,16 @@ pub struct WalletOrganisation {
     pub wallet_id: u256,
     pub role: UserRole,
 }
+
+
+#[derive(Drop, Copy, Serde, starknet::Store)]
+pub struct WalletMember{
+    pub member_address: ContractAddress,
+    pub admin_address: ContractAddress,
+    pub organisation_name: felt252,
+    pub name: felt252,
+    pub active: bool,
+    pub spend_limit: u256,
+    pub member_identifier: u256,
+    pub role: UserRole
+}

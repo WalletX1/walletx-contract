@@ -1,1 +1,1 @@
-pub mod IWallet;
+pub mod iwallet;

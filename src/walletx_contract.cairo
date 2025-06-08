@@ -1,11 +1,12 @@
 #[starknet::contract]
 pub mod WalletXContract {
-    use starknet::storage::StorageMapWriteAccess;
+    use starknet::storage::Vec;
+use starknet::storage::StorageMapWriteAccess;
     use starknet::storage::StoragePointerWriteAccess;
     use starknet::storage::StoragePointerReadAccess;
     use starknet::storage::StoragePathEntry;
     use starknet::{ContractAddress, contract_address_const};
-    use walletx::interface::IWallet::IWallet;
+    use walletx::interface::iwallet::IWallet;
     use starknet::storage::Map;
     use walletx::types::types::{WalletOrganisation, UserRole};
 
@@ -14,6 +15,7 @@ pub mod WalletXContract {
         wallet_admins: Map<ContractAddress, bool>,
         wallet_organisations: Map<ContractAddress, WalletOrganisation>,
         wallet_id: u256,
+        wallet_organisation_members: Map<ContractAddress, Vec<ContractAddress>>
     }
 
     #[generate_trait]
