@@ -12,11 +12,10 @@ pub mod WalletXContract {
         wallet_admins: Map<ContractAddress, bool>,
         wallet_organisations: Map<ContractAddress, WalletOrganisation>,
         wallet_id: u256,
-        // For adding members to organisation
         org_members: Map<(ContractAddress, u32), WalletMember>,
         org_member_count: Map<ContractAddress, u32>,
         member_to_org: Map<ContractAddress, ContractAddress>,
-        //
+
     }
 
     #[generate_trait]
@@ -79,7 +78,6 @@ pub mod WalletXContract {
             role: UserRole::Member
         };
         let current_count = self.org_member_count.entry(admin_address).read();
-        
         self.org_members.write((admin_address, current_count), newMember);
         self.org_member_count.write(admin_address, current_count);
         self.member_to_org.write(member_address,admin_address)
