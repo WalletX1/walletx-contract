@@ -8,4 +8,12 @@ pub trait IWallet<TContractState> {
         wallet_name: felt252,
         fund_amount: u256,
     );
+    fn onboard_memeber(
+        ref self: TContractState,
+        member_address: ContractAddress,
+        admin_address: ContractAddress,
+        member_name: felt252,
+        fund_amount: u256,
+        member_identifier: u256
+    );
 }
