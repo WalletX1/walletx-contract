@@ -79,7 +79,7 @@ pub mod WalletXContract {
         };
         let current_count = self.org_member_count.entry(admin_address).read();
         self.org_members.write((admin_address, current_count), newMember);
-        self.org_member_count.write(admin_address, current_count);
+        self.org_member_count.write(admin_address, current_count + 1);
         self.member_to_org.write(member_address,admin_address)
     }
 
