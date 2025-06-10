@@ -1,1 +1,1 @@
-{"version":1,"contracts":[]}
+{"version":1,"contracts":[{"id":"o3tub99e8efom","package_name":"walletx","contract_name":"WalletXContract","module_path":"walletx::walletx_contract::WalletXContract","artifacts":{"sierra":"walletx_WalletXContract.contract_class.json","casm":null}}]}
